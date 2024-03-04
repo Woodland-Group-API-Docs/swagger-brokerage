@@ -58,6 +58,12 @@
         "schemas": {
             "Brokerage_Request": {
                 "type": "object",
+                "required": [
+                    "countryId",
+                    "transportMode",
+                    "direction",
+                    "lineItems"
+                ],
                 "properties": {
                     "countryId": {
                         "type": "string"
