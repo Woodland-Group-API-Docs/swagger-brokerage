@@ -1,0 +1,156 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "Woodland API: FF Customs Brokerage Service",
+        "description": "",
+        "version": "v1"
+    },
+    "servers": [
+        {
+            "url": "https://api.woodlandgroup.com/brokerage/ukcustoms/v1"
+        }
+    ],
+    "paths": {
+        "/export": {
+            "post": {
+                "summary": "New Export Declaration",
+                "operationId": "new-export-declaration",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Brokerage_Request"
+                            },
+                            "example": {
+                                "countryId": "string",
+                                "transportMode": "string",
+                                "direction": "string",
+                                "lineItems": [
+                                    {
+                                        "commodityCode": "string",
+                                        "description": "string",
+                                        "itemSuppliedUnits": 0,
+                                        "itemGrossWeight": 0,
+                                        "itemNetWeight": 0,
+                                        "itemWeightUnit": "string",
+                                        "itemValue": 0,
+                                        "itemValueCurrency": "string",
+                                        "itemCPC": "string",
+                                        "packageType": "string",
+                                        "packageCount": 0,
+                                        "originItemCountryId": "string",
+                                        "dutyPreferenceCode": "string"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": null
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Brokerage_Request": {
+                "type": "object",
+                "properties": {
+                    "countryId": {
+                        "type": "string"
+                    },
+                    "transportMode": {
+                        "type": "string"
+                    },
+                    "direction": {
+                        "type": "string"
+                    },
+                    "lineItems": {
+                        "type": "array",
+                        "items": {
+                            "required": [
+                                "commodityCode",
+                                "description",
+                                "itemSuppliedUnits",
+                                "itemGrossWeight",
+                                "itemNetWeight",
+                                "itemWeightUnit",
+                                "itemValue",
+                                "itemValueCurrency",
+                                "packageType",
+                                "packageCount",
+                                "originItemCountryId"
+                            ],
+                            "type": "object",
+                            "properties": {
+                                "commodityCode": {
+                                    "type": "string"
+                                },
+                                "description": {
+                                    "type": "string"
+                                },
+                                "itemSuppliedUnits": {
+                                    "type": "integer"
+                                },
+                                "itemGrossWeight": {
+                                    "type": "integer"
+                                },
+                                "itemNetWeight": {
+                                    "type": "integer"
+                                },
+                                "itemWeightUnit": {
+                                    "type": "string"
+                                },
+                                "itemValue": {
+                                    "type": "integer"
+                                },
+                                "itemValueCurrency": {
+                                    "type": "string"
+                                },
+                                "itemCPC": {
+                                    "type": "string"
+                                },
+                                "packageType": {
+                                    "type": "string"
+                                },
+                                "packageCount": {
+                                    "type": "integer"
+                                },
+                                "originItemCountryId": {
+                                    "type": "string"
+                                },
+                                "dutyPreferenceCode": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-apim-schema-name": "Brokerage Request"
+            }
+        },
+        "securitySchemes": {
+            "apiKeyHeader": {
+                "type": "apiKey",
+                "name": "Ocp-Apim-Subscription-Key",
+                "in": "header"
+            },
+            "apiKeyQuery": {
+                "type": "apiKey",
+                "name": "subscription-key",
+                "in": "query"
+            }
+        }
+    },
+    "security": [
+        {
+            "apiKeyHeader": []
+        },
+        {
+            "apiKeyQuery": []
+        }
+    ]
+}
