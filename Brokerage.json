@@ -25,6 +25,7 @@
                                 "countryId": "string",
                                 "transportMode": "string",
                                 "direction": "string",
+                                "clientReference": "string",
                                 "lineItems": [
                                     {
                                         "commodityCode": "string",
