@@ -26,6 +26,29 @@
                                 "transportMode": "string",
                                 "direction": "string",
                                 "clientReference": "string",
+                                "consignor": {
+                                    "countryCode": "string",
+                                    "address1": "string",
+                                    "address2": "string",
+                                    "address3": "string",
+                                    "postcode": "string",
+                                    "city": "string",
+                                    "name": "string",
+                                    "companyReferenceNumber": "string",
+                                    "taxId": "string"
+                                },
+                                "consignee": {
+                                    "countryCode": "string",
+                                    "address1": "string",
+                                    "address2": "string",
+                                    "address3": "string",
+                                    "postcode": "string",
+                                    "city": "string",
+                                    "name": "string",
+                                    "companyReferenceNumber": "string",
+                                    "taxId": "string"
+                                },
+
                                 "lineItems": [
                                     {
                                         "commodityCode": "string",
@@ -78,6 +101,84 @@
                     },
                     "clientReference": {
                         "type": "string"
+                    },
+                    "consignor": {
+                        "type": "object",
+                        "required":[
+                            "countryCode",
+                            "address1",
+                            "city",
+                            "postcode",
+                            "name"
+                        ],
+                        "properties": {
+                            "countryCode": {
+                                "type": "string"
+                            },
+                            "address1": {
+                                "type": "string"
+                            },
+                            "address2": {
+                                "type": "string"
+                            },
+                            "address3": {
+                                "type": "string"
+                            },
+                            "postcode": {
+                                "type": "string"
+                            },
+                            "city": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "companyReferenceNumber": {
+                                "type": "string"
+                            },
+                            "taxId": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "consignee": {
+                        "type": "object",
+                        "required":[
+                            "countryCode",
+                            "address1",
+                            "city",
+                            "postcode",
+                            "name"
+                        ],
+                        "properties": {
+                            "countryCode": {
+                                "type": "string"
+                            },
+                            "address1": {
+                                "type": "string"
+                            },
+                            "address2": {
+                                "type": "string"
+                            },
+                            "address3": {
+                                "type": "string"
+                            },
+                            "postcode": {
+                                "type": "string"
+                            },
+                            "city": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "companyReferenceNumber": {
+                                "type": "string"
+                            },
+                            "taxId": {
+                                "type": "string"
+                            }
+                        }
                     },
                     "lineItems": {
                         "type": "array",
