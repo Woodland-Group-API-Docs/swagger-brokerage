@@ -62,6 +62,7 @@
                     "countryId",
                     "transportMode",
                     "direction",
+                    "clientReference",
                     "lineItems"
                 ],
                 "properties": {
@@ -72,6 +73,9 @@
                         "type": "string"
                     },
                     "direction": {
+                        "type": "string"
+                    },
+                    "clientReference": {
                         "type": "string"
                     },
                     "lineItems": {
