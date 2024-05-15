@@ -35,7 +35,8 @@
                                     "city": "string",
                                     "name": "string",
                                     "companyReferenceNumber": "string",
-                                    "taxId": "string"
+                                    "taxId": "string",
+                                    "eoriNumber": "string"
                                 },
                                 "consignee": {
                                     "countryCode": "string",
@@ -46,7 +47,8 @@
                                     "city": "string",
                                     "name": "string",
                                     "companyReferenceNumber": "string",
-                                    "taxId": "string"
+                                    "taxId": "string",
+                                    "eoriNumber": "string"
                                 },
 
                                 "lineItems": [
@@ -120,6 +122,7 @@
                         }
                     }
                 }
+                
             }
         }
     },
