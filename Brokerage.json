@@ -71,8 +71,53 @@
                     }
                 },
                 "responses": {
-                    "200": {
-                        "description": null
+                    "202": {
+                        "description": "Accepted",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "description": "Holds the current status of the brokerage request. Max Length 9."
+                                        },
+                                        "referenceNumber": {
+                                            "type": "string",
+                                            "description": "Our Unique Reference Number. Max Length 11."
+                                        },
+                                        "correlationId": {
+                                            "type": "string",
+                                            "description": "A technical tracking reference used by us to trace the route this order takes through all our systems. Our support team might ask you for this during support calls."
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "description": "Holds the current status of the brokerage request. Max Length 9."
+                                        },
+                                        "reason": {
+                                            "type": "string",
+                                            "description": "Human readable description of the error encountered."
+                                        },
+                                        "correlationId": {
+                                            "type": "string",
+                                            "description": "A technical tracking reference used by us to trace the route this order takes through all our systems. Our support team might ask you for this during support calls."
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -138,6 +183,9 @@
                             },
                             "taxId": {
                                 "type": "string"
+                            },
+                            "eoriNumber": {
+                                "type": "string"
                             }
                         }
                     },
@@ -177,6 +225,9 @@
                             },
                             "taxId": {
                                 "type": "string"
+                            },
+                            "eoriNumber": {
+                                "type": "string"
                             }
                         }
                     },
@@ -192,8 +243,6 @@
                                 "itemWeightUnit",
                                 "itemValue",
                                 "itemValueCurrency",
-                                "packageType",
-                                "packageCount",
                                 "originItemCountryId"
                             ],
                             "type": "object",
